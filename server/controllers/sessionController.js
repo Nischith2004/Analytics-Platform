@@ -50,3 +50,33 @@ exports.getSessions = async (req, res) => {
     });
   }
 };
+exports.getSessionDetails = async (req, res) => {
+  try {
+    const { sessionId } = req.params;
+
+    const events = await Event.find({
+      sessionId: sessionId,
+    }).sort({
+      timestamp: 1,
+    });
+
+    if (events.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "Session not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      sessionId,
+      totalEvents: events.length,
+      data: events,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
