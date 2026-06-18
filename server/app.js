@@ -6,12 +6,17 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
 const eventRoutes = require("./routes/event.routes");
+const sessionRoutes = require("./routes/session.routes");
 
 require("dotenv").config();
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 
 app.use(express.json());
 
@@ -31,7 +36,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.use("/api/events", eventRoutes);
-
+app.use("/api/sessions", sessionRoutes);
 app.get("/", (req, res) => {
   res.json({
     success: true,
