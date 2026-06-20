@@ -18,6 +18,8 @@ exports.receiveEvent = async (req, res) => {
       data: event,
     });
   } catch (error) {
+    console.log("EVENT ERROR:");
+    console.log(error);
     res.status(500).json({
       success: false,
       message: error.message,

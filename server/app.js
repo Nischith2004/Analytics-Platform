@@ -7,6 +7,8 @@ const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
 const eventRoutes = require("./routes/event.routes");
 const sessionRoutes = require("./routes/session.routes");
+const heatmapRoutes = require("./routes/heatmap.routes");
+const dashboardRoutes = require("./routes/dashboard.routes");
 
 require("dotenv").config();
 
@@ -37,6 +39,9 @@ app.use(limiter);
 
 app.use("/api/events", eventRoutes);
 app.use("/api/sessions", sessionRoutes);
+app.use("/api/heatmap", heatmapRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+
 app.get("/", (req, res) => {
   res.json({
     success: true,

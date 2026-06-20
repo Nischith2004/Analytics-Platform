@@ -44,6 +44,9 @@ exports.getSessions = async (req, res) => {
       data: sessions,
     });
   } catch (error) {
+    console.log("SESSION ERROR:");
+    console.log(error);
+
     res.status(500).json({
       success: false,
       message: error.message,
