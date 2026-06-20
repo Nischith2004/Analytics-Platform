@@ -1,12 +1,12 @@
 import { Globe, ChevronDown } from "lucide-react";
 
 const pages = [
-  "http://localhost:5173/",
-  "http://localhost:5173/login",
-  "http://localhost:5173/dashboard",
-  "http://localhost:5173/products",
-  "http://localhost:5173/checkout",
-  "http://localhost:5173/profile",
+  "http://localhost:5500/",
+  "http://localhost:5500/login",
+  "http://localhost:5500/dashboard",
+  "http://localhost:5500/products",
+  "http://localhost:5500/checkout",
+  "http://localhost:5500/profile",
 ];
 
 export default function PageSelector({ page, setPage }) {

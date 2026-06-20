@@ -18,7 +18,7 @@ export default function HeatmapCanvas({ points = [] }) {
           </div>
 
           <div className="ml-8 flex-1 rounded-lg bg-slate-800 h-8 flex items-center px-4 text-sm text-slate-400">
-            https://localhost:5173
+            https://localhost:5500
           </div>
         </div>
 

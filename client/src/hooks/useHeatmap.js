@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getHeatmap, getPages } from "../services/analyticsService";
 
 export default function useHeatmap() {
-  const [page, setPage] = useState("http://localhost:5173/");
+  const [page, setPage] = useState("http://localhost:5500/");
 
   const [points, setPoints] = useState([]);
 

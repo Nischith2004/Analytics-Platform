@@ -19,7 +19,7 @@ import PageSelector from "../components/dashboard/PageSelector";
 import { getHeatmap } from "../services/analyticsService";
 
 export default function Heatmap() {
-  const [page, setPage] = useState("http://localhost:5173/");
+  const [page, setPage] = useState("http://localhost:5500/");
 
   const [heatmap, setHeatmap] = useState([]);
 
